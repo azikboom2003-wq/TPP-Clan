@@ -1,0 +1,248 @@
+/* Общие стили и Переменные */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-card: #141414;
+    --blood-red: #8b0000;
+    --neon-red: #ff2a2a;
+    --text-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: 2px solid var(--blood-red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--neon-red);
+    font-size: 28px;
+    font-weight: 900;
+    text-shadow: 0 0 10px var(--blood-red);
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--neon-red);
+    text-shadow: 0 0 8px var(--neon-red);
+}
+
+/* Кнопки */
+.btn-neon {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    border: 2px solid var(--blood-red);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+.btn-neon:hover {
+    background: var(--blood-red);
+    box-shadow: 0 0 20px var(--neon-red);
+    cursor: pointer;
+}
+
+/* Hero Screen */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80'); /* Заглушка фона */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid var(--blood-red);
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px var(--blood-red);
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #bbb;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Секции */
+.section {
+    padding: 80px 50px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--neon-red);
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px var(--blood-red);
+}
+
+/* Карточки и сетки */
+.card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--blood-red);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+}
+
+.about-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.officers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.officer-card {
+    text-align: center;
+}
+
+.officer-card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.officer-card p {
+    color: var(--neon-red);
+    font-size: 14px;
+}
+
+/* Разделенная секция (Правила + Тренировки) */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.rules-block ul {
+    list-style-position: inside;
+    margin-top: 20px;
+}
+
+.rules-block li {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.time {
+    color: var(--neon-red);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+.time-hours {
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Подвал */
+.footer {
+    padding: 40px 50px;
+    background: #000;
+    border-top: 2px solid var(--blood-red);
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--neon-red);
+}
+
+/* Адаптация под телефоны */
+@media (max-width: 768px) {
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+    .header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
