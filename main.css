@@ -6,6 +6,8 @@
     --text-color: #e0e0e0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -54,18 +56,37 @@ h1, h2, h3 {
     width: auto;
 }
 
+.nav {
+    display: flex;
+    align-items: center;
+}
+
 .nav a {
     color: var(--text-color);
     text-decoration: none;
     margin: 0 15px;
     font-weight: 600;
     font-size: 14px;
-    transition: 0.3s;
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 
-.nav a:hover {
+.nav a.nav-external {
+    color: var(--neon-red);
+    text-shadow: 0 0 5px rgba(255, 42, 42, 0.3);
+}
+
+.nav a.nav-external:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+    transform: scale(1.05) translateY(-2px);
+    text-decoration: underline;
+}
+
+/* Обычные ссылки на странице */
+.nav a:not(.nav-external):hover {
     color: var(--neon-red);
     text-shadow: 0 0 8px var(--neon-red);
+    transform: scale(1.05) translateY(-2px);
 }
 
 .btn-neon {
@@ -78,7 +99,7 @@ h1, h2, h3 {
     border: 2px solid var(--blood-red);
     border-radius: 5px;
     font-weight: bold;
-    transition: 0.4s;
+    transition: 0.4s ease;
     text-transform: uppercase;
 }
 
@@ -86,6 +107,11 @@ h1, h2, h3 {
     background: var(--blood-red);
     box-shadow: 0 0 20px var(--neon-red);
     cursor: pointer;
+}
+
+.btn-neon.large {
+    font-size: 1.1rem;
+    padding: 15px 40px;
 }
 
 .hero {
@@ -132,12 +158,12 @@ h1, h2, h3 {
     padding: 30px;
     border-radius: 8px;
     border-left: 4px solid var(--blood-red);
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.4);
 }
 
 .about-grid {
@@ -218,6 +244,21 @@ h1, h2, h3 {
     color: #777;
 }
 
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--neon-red);
+}
+
 @media (max-width: 768px) {
     .split-section {
         grid-template-columns: 1fr;
@@ -226,6 +267,14 @@ h1, h2, h3 {
         padding: 20px;
         flex-direction: column;
         gap: 15px;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav a {
+        margin: 0;
+        font-size: 16px;
     }
     .hero-content h1 {
         font-size: 36px;

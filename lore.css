@@ -21,48 +21,51 @@ body {
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.95);
+    background: #000000;
     border-bottom: 2px solid var(--blood-red);
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 20px 0;
 }
 
-.logo {
+.nav-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.nav-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 26px;
+    font-size: 20px;
+    font-weight: 900;
     color: var(--neon-red);
     text-shadow: 0 0 10px var(--blood-red);
-    text-decoration: none;
+    text-align: center;
+    flex: 1;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-}
-
-.back-btn {
-    font-size: 14px;
+.nav-btn {
+    display: inline-block;
     padding: 10px 20px;
     background: transparent;
     color: var(--neon-red);
-    border: 2px solid var(--blood-red);
+    border: 1px solid var(--neon-red);
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
-    border-radius: 5px;
-    transition: 0.3s;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
-.back-btn:hover {
-    background: var(--blood-red);
+.nav-btn:hover {
+    background: var(--neon-red);
     color: #fff;
     box-shadow: 0 0 15px var(--neon-red);
     cursor: pointer;
@@ -209,7 +212,7 @@ blockquote {
 }
 
 @media (max-width: 768px) {
-    .header {
+    .nav-container {
         flex-direction: column;
         gap: 15px;
     }
